@@ -1,57 +1,51 @@
 // Dart Lists
 
 void main() {
+  // Create a list
   var myList = [1, 2, 3];
   print(myList);
 
+  // Access an item by index
   print(myList[0]);
 
   // Change an item
-
   myList[0] = 41;
   print(myList);
 
-  // Create an Empty List
-
+  // Create an empty list
   var emptyList = [];
-  print('Empty List:  $emptyList');
+  print('Empty List: $emptyList');
 
-  // Add To Empty List
-
+  // Replace the empty list with a new list
   emptyList = [2, 3, 4];
-  print('Empty List filled: $emptyList');
+  print('List: $emptyList');
 
-  // Add more to the empty list
+  // Add one item to the end
   emptyList.add(55);
   print(emptyList);
 
-  // Add multuple items to empty list
+  // Add multiple items to the end
   emptyList.addAll([66, 67, 68]);
   print(emptyList);
 
-  // Insert at specific position (position, item)
-
+  // Insert an item at a specific index
   var myList2 = [1, 2, 3];
   myList2.insert(0, 900);
   print(myList2);
 
-  // Insert Many
+  // Insert multiple items at a specific index
   myList2.insertAll(4, [99, 98, 97]);
   print(myList2);
 
-  // Mixed List
+  // A list can contain different data types
+  var mixedList = [1, 2, 3, 'zippo', 'coder', 'remove'];
+  print(mixedList);
 
-  var mixedlist = [1, 2, 3, 'zippo', 'coder', 'remove'];
-  print(mixedlist);
+  // Remove an item by value
+  mixedList.remove('zippo');
+  print(mixedList);
 
-  // Remove item from list
-
-  mixedlist.remove(
-    'zippo',
-  ); // make sure zippo is one time on the list other wise we have to mention the specific location of the target
-  print(mixedlist);
-
-  // Remove from specific location
-  mixedlist.removeAt(4);
-  print(mixedlist);
+  // Remove an item by index
+  mixedList.removeAt(4);
+  print(mixedList);
 }
