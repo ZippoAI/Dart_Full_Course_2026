@@ -1,18 +1,41 @@
-// Map == Dictionary in Python
+void main() {
+  // Map == Dictionary in Python
 
+  // Map! Key/Value Pairs
+  var sports = {'zippo': 'esport', 'bulbul': 'cricket', 'alkama': 'football'};
 
-// Map! Key/Value Pairs
+  print(sports);
+  print(sports['zippo']);
+  print(sports['cricket']);
+  // Show value
 
-// Show value
+  print(sports.values);
 
-// Show keys
+  // Show keys
+  print(sports.keys);
 
-// Show lenght
+  // Show lenght
 
-// Add Something
+  print(sports.length);
 
-// Add Many Things
+  // Add Something
+  sports['Coder:Basketball'];
+  print(sports);
 
-// Remove Something
+  // Add Many Things
 
-// Remove Everything
+  sports.addAll({'Sachin': 'Vollyball', 'Kohli': 'Rugby'});
+
+  print(sports);
+
+  // Remove Something
+
+  sports.remove('Kohli');
+
+  print(sports);
+
+  // Remove Everything
+
+  sports.clear();
+  print(sports);
+}
