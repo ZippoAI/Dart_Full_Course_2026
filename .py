@@ -1,5 +1,3 @@
-empty = 0
-for i in range(1,11):
-    empty = empty+i
+name = input('Enter your name: ')
 
-print(empty)
+print(f'hello {name}')
