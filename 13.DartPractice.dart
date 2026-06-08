@@ -1,24 +1,49 @@
 import 'dart:io';
 
 void main() {
-  var secretNumber = 25;
-  var game_over = false;
+  var balance = 5000;
+  var exit = false;
 
-  stdout.write('Enter a number between 1 and 25: ');
-  var guess = int.parse(stdin.readLineSync()!);
+  while (!exit) {
+    stdout.write(
+      '\n1. Check Balance'
+      '\n2. Deposit'
+      '\n3. Withdraw'
+      '\n4. Exit'
+      '\nYour Choice: ',
+    );
 
-  while (game_over==false) {
-    if (secretNumber == guess) {
-      print('Correct');
-      break;
-    } else if (guess > secretNumber) {
-      print('Too high');
-      stdout.write('Try agian! Enter a number between 1 and 25: ');
-      guess = int.parse(stdin.readLineSync()!);
-    } else {
-      print('Too low');
-      stdout.write('Try agian! Enter a number between 1 and 25: ');
-      guess = int.parse(stdin.readLineSync()!);
+    var choice = int.parse(stdin.readLineSync()!);
+
+    if (choice == 1) {
+      print('Your balance is ₹$balance');
+    } 
+    else if (choice == 2) {
+      stdout.write('Enter deposit amount: ');
+      var deposit = int.parse(stdin.readLineSync()!);
+
+      balance += deposit;
+      print('Deposit successful');
+      print('Current balance: ₹$balance');
+    } 
+    else if (choice == 3) {
+      stdout.write('Enter withdrawal amount: ');
+      var withdraw = int.parse(stdin.readLineSync()!);
+
+      if (withdraw <= balance) {
+        balance -= withdraw;
+        print('Withdrawal successful');
+        print('Current balance: ₹$balance');
+      } else {
+        print('Insufficient balance');
+      }
+    } 
+    else if (choice == 4) {
+      print('Thank you for using our service.');
+      exit = true;
+    } 
+    else {
+      print('Invalid choice');
     }
   }
 }
